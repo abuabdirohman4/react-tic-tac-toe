@@ -7,7 +7,15 @@ class Square extends React.Component {
     super(props);
     this.state = {
       value: null,
+      bgColor: null
     }
+  }
+
+  colorChange = () => {
+    this.setState({
+      value: 'X',
+      bgColor: "#FBD460"
+    })
   }
 
   render() {
@@ -15,7 +23,9 @@ class Square extends React.Component {
       // <button className="square" onClick={() => {console.log('click')}}>
       <button 
         className="square" 
-        onClick={() => this.setState({value: 'X'})}
+        style={{backgroundColor: this.state.bgColor}}
+        // onClick={() => this.setState({value: 'X'})}
+        onClick={this.colorChange}
       >
         {/* TODO */}
         {/* {this.props.value} */}
